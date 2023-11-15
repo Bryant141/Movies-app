@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+    <form id="myForm">
+        <label for="input1">Input 1:</label>
+        <input type="text" id="input1" name="input1" placeholder="Title">
+    
+        <br>
+    
+        <label for="input2">Input 2:</label>
+        <input type="text" id="input2" name="input2" placeholder="Rating">
+    
+        <br>
+    
+        <input type="submit" value="Submit">
+      </form>
+      <div class="results">
+        <ul class="resultslist">
+
+        </ul>
+      </div>
+      <script>
+        $(document).ready(function() {
+          // Handle form submission
+          $('#myForm').submit(function(event) {
+            // Prevent the default form submission
+            event.preventDefault();
+    
+            // Retrieve the values from the input fields
+            var input1Value = $('#input1').val();
+            var input2Value = $('#input2').val();
+    
+            // Do something with the values (you can replace this with your own logic)
+            console.log('Input 1:', input1Value);
+            console.log('Input 2:', input2Value);
+            var newItem = $('<li>New Item</li>').appendTo('.resultslist');
+
+        // Change the text of the newly appended li
+        newItem.text(input1Value + " : " + input2Value);
+          });
+        });
+        
+      </script>
+    
+</body>
+</html>
